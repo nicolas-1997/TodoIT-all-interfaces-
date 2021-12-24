@@ -1,6 +1,6 @@
 {
   "/api/*":{
-      "target":"http://vcoronado-001-site12.dtempurl.com",
+      "target":"http://logistica.asambleas.cl",
       "secure":false,
       "changeOrigin":true,
       "logLevel":"debug"

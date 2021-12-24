@@ -1,1 +1,27 @@
-<p>layaout works!</p>
+<div class="layout--container">
+  <section class="header">
+    <div class="btn">
+      <button (click)="changeState()">
+        <i class='bx bx-menu'></i>
+      </button>
+    </div>
+    <div class="title">
+      <i class='bx bx-devices'></i>
+      <h1>Todo IT</h1>
+    </div>
+  </section>
+  <section class="body" [class.active]="state">
+    <div class="sidebar">
+
+    </div>
+    <section class="main">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+  <section class="footer">
+    <i class='bx bxl-facebook'></i>
+    <i class='bx bxl-instagram'></i>
+    <i class='bx bxl-whatsapp'></i>
+  </section>
+</div>
+

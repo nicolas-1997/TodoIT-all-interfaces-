@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayaoutComponent } from './layaout/layaout.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
 
 
 
 @NgModule({
   declarations: [
-    LayaoutComponent
+    RegisterUserComponent
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    RegisterUserComponent
   ]
 })
 export class ComponentsModule { }

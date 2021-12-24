@@ -1,8 +1,41 @@
-<div>
-  <header>
-    <h1>Hola soy el header cadete</h1>
-  </header>
-  <div>
-    <router-outlet></router-outlet>
-  </div>
+<div class="layout--container">
+  <section class="header">
+      <div class="btn">
+        <button (click)="changeState()">
+          <i class='bx bx-menu'></i>
+        </button>
+      </div>
+      <div class="title">
+        <i class='bx bx-devices'></i>
+        <h1>
+          Todo IT
+        </h1>
+      </div>
+  </section>
+  <section class="body" [class.active]="state">
+    <div class="sidebar">
+      <ul class="sidebar--list">
+        <li class="sidebar--item">
+          <a  class="item" [routerLink]="['./viajes']" routerLinkActive="router-link-active">Viajes</a>
+          <ul class="list-viajes">
+            <li class="list-item">
+              <a [routerLink]="['./viajes']" routerLinkActive="router-link-active">Disponibles</a>
+            </li>
+            <li class="list-item">
+              <a [routerLink]="['./viajes-en-curso']" routerLinkActive="router-link-active" >En Curso</a>
+            </li>
+          </ul>
+        </li>
+        <li class="sidebar--item">
+          <a class="item" [routerLink]="['./history']" routerLinkActive="router-link-active">Historial</a>
+        </li>
+        <li class="sidebar--item">
+          <a class="item" [routerLink]="['./viajes']" routerLinkActive="router-link-active">Cerrar Sesion</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+  </section>
 </div>

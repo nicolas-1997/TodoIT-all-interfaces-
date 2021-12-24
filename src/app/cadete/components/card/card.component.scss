@@ -1,0 +1,84 @@
+.card--container{
+  width: 100%;
+  height: 100%;
+  background-color: darkgoldenrod;
+
+  .card--content{
+    padding: 1.2rem 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25%, 75%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    .vista-previa{
+      display: grid;
+      grid-template-columns: 80% 20%;
+
+      .left{
+        grid-column: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 1.5rem;
+      }
+      .rigth{
+        display: grid;
+        place-items: center;
+
+        button{
+          width: 3.5rem;
+          height: 3.5rem;
+          border: none;
+          background: none;
+          i{
+            font-size: 3.5rem;
+          }
+        }
+
+      }
+    }
+    .info-card{
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 80% 20%;
+
+
+      .info{
+        grid-row: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        p{
+          margin-left: 1.2rem;
+        }
+      }
+      .btn{
+        grid-row: 2;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button{
+          width: 3.5rem;
+          height: 3rem;
+          border: none;
+          background: none;
+          margin-bottom: 1.2rem;
+          i{
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

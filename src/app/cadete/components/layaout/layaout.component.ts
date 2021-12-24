@@ -12,4 +12,19 @@ export class LayaoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  state:boolean = false;
+
+
+  changeState(){
+    this.state = !this.state
+  }
+
+
+  // stateViajes:boolean = false;
+
+
+  // changeStateViajes(){
+  //   this.stateViajes = !this.stateViajes
+  // }
 }

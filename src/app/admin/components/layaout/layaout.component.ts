@@ -12,4 +12,12 @@ export class LayaoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  state:boolean = false
+
+
+
+  changeState(){
+    this.state = !this.state
+  }
+
 }

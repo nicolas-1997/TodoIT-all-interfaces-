@@ -1,0 +1,44 @@
+.viajes--container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .viajes--content{
+    width: 80%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 85%;
+
+    .search{
+      grid-row: 1;
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .table--container{
+      grid-row: 2;
+      width: 100%;
+      min-width: 350px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      .tabla--content{
+        width: 80%;
+        height: 90%;
+
+        border: 1px solid crimson;
+      }
+    }
+  }
+}

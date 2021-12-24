@@ -1,0 +1,41 @@
+<div class="layout--container">
+  <section class="header">
+    <div class="btn">
+      <button (click)="changeState()">
+        <i class='bx bx-menu'></i>
+      </button>
+    </div>
+    <div class="title">
+      <i class='bx bx-devices'></i>
+      <h1>Todo IT</h1>
+    </div>
+  </section>
+  <section class="body" [class.active]="state">
+    <div class="sidebar">
+      <a [routerLink]="['./home']" routerLinkActive="router-link-active" class="inicio">
+        <i class='bx bx-home'></i>
+        <h1>Inicio</h1>
+      </a>
+      <ul>
+        <li>
+          <a [routerLink]="['./solicitud-retiro']" routerLinkActive="router-link-active">Solicitar Viaje</a>
+        </li>
+        <li>
+          <a [routerLink]="['./estado-envio']" routerLinkActive="router-link-active">Estado del Viaje</a>
+        </li>
+        <li>
+          <a [routerLink]="['./historial']" routerLinkActive="router-link-active">Historial</a>
+        </li>
+        <li>Cerrar Sesion</li>
+      </ul>
+    </div>
+    <section class="main">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+  <section class="footer">
+    <i class='bx bxl-facebook'></i>
+    <i class='bx bxl-instagram'></i>
+    <i class='bx bxl-whatsapp'></i>
+  </section>
+</div>

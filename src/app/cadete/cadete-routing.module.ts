@@ -4,7 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LayaoutComponent } from './components/layaout/layaout.component';
 import { HomeComponent } from './pages/home/home.component';
-
+import { ViajesComponent } from './pages/viajes/viajes.component';
+import { ViajesEnCursoComponent } from './pages/viajes-en-curso/viajes-en-curso.component';
+import { HistoryComponent } from './pages/history/history.component';
 const routes: Routes = [
   {
     path: '',
@@ -12,11 +14,23 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'HomeComponent'
+        redirectTo: 'home'
       },
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: 'viajes',
+        component: ViajesComponent
+      },
+      {
+        path: 'viajes-en-curso',
+        component: ViajesEnCursoComponent
+      },
+      {
+        path: 'history',
+        component: HistoryComponent
       }
     ]
   }

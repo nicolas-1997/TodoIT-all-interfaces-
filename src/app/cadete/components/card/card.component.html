@@ -1,0 +1,33 @@
+<div class="card--container">
+  <div class="card--content"  [class.active]="state">
+    <section class="vista-previa">
+      <div class="left">
+        <p>direccion: {{direccion}} </p>
+        <p>Estado: {{estado}} </p>
+      </div>
+      <div class="rigth">
+        <button (click)="changeState()">
+          <i class='bx bx-chevron-down'></i>
+        </button>
+      </div>
+    </section>
+    <section class="info-card" *ngIf="state">
+      <div class="info">
+        <p>hora: {{hora}} </p>
+        <p>equipo: {{equipo}} </p>
+        <p>cliente: {{cliente}} </p>
+      </div>
+      <div class="btn">
+        <button *ngIf="!enCurso">
+          <i class='bx bxs-check-circle' ></i>
+        </button>
+        <button *ngIf="enCurso">
+          <i class='bx bxs-check-circle' ></i>
+        </button>
+        <button *ngIf="enCurso">
+          <i class='bx bxs-x-circle'></i>
+        </button>
+      </div>
+    </section>
+  </div>
+</div>

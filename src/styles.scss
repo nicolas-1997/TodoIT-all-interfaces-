@@ -1,4 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --veryDarkBlue: #0b0d19;
+  --veryDarkBlue2: #12141f;
+  --veryDarkBlue3: #0b0d19;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  --brightPink: #f6255a;
+  --vividPink: #da1f4f;
+
+  --cyanPure: #00edff;
+  --darkGray: #8b8b8b;
+  --darkLateGray: #242836;
+  --whiteSmoke: whitesmoke;
+
+  --title1: 'Quicksand', sans-serif;
+  --textos1:  'Roboto', sans-serif;
+  --textos2:  'Noto Serif', serif;
+
+  --boxShadowNeonPink: rgba(218,31,79, 0.56) 0px 22px 70px 4px;
+  --boxShadowNeonPink2:rgba(218,31,79, 0.56)0px 15px 25px, rgba(218,31,79, 0.56) 0px 5px 10px;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--darkGray);
+}
+html, body { height: 100%;
+font-size: 62.5%; }
+body { margin: 0; font-family: var(--textos1); }
