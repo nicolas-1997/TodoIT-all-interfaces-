@@ -1,5 +1,24 @@
 <div class="columna--container">
   <div class="columna--content">
-    <div class="data-colum" *ngFor="let item of column"> {{item}} </div>
+    <div class="data-colum">
+      <p> {{fecha}} </p>
+    </div>
+    <div class="data-colum">
+      <p> {{marca}} </p>
+    </div>
+    <div class="data-colum">
+      <p> {{modelo}} </p>
+    </div>
+    <div class="data-colum">
+      <p> {{EstadoEquipo}} </p>
+    </div>
+    <div class="data-colum">
+      <p> {{EstadoEnvio}} </p>
+    </div>
+    <div *ngIf="history" class="data-colum">
+      <p> {{FechaEntrega}} </p>
+    </div>
   </div>
 </div>
+
+

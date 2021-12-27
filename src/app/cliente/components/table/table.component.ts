@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { Travel } from '../../../shared/models/travel.model';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -20,7 +20,7 @@ export class TableComponent implements OnInit {
 
   @Input() title = ''
   columnas:string[] = []
-
-
+  @Input() tableInfo:Travel[] = []
+  @Input() history= false
 
 }

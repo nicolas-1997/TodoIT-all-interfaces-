@@ -12,8 +12,16 @@
       <div class="header-table">
           <div  class="column"  *ngFor="let colum of columnas">{{colum}}</div>
       </div>
-      <div class="body-table">
-        <app-columna></app-columna>
+      <div class="body-table" *ngFor="let viaje of tableInfo">
+        <app-columna
+          fecha="{{viaje.creationDate | date:'shortDate'}}"
+          marca="{{viaje.travelEquipmentDTOs[viaje.travelEquipmentDTOs.length -1].equipment.mark}}"
+          modelo="{{viaje.travelEquipmentDTOs[viaje.travelEquipmentDTOs.length -1].equipment.model}}"
+          EstadoEquipo="{{viaje.travelEquipmentDTOs[viaje.travelEquipmentDTOs.length -1].statusTravel | statusTravelTraductor}}"
+          EstadoEnvio="{{viaje.lastStatusTravel | statusTravelTraductor}}"
+          FechaEntrega="{{viaje.travelEquipmentDTOs[viaje.travelEquipmentDTOs.length -1].operationDate | date:'shortDate'}}"
+          [history]="history"
+        ></app-columna>
       </div>
       <div class="footer-table">
 
@@ -21,3 +29,4 @@
     </div>
   </section>
 </div>
+

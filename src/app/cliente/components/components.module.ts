@@ -5,8 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
 import { ColumnaComponent } from './columna/columna.component';
-
-
+import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
   declarations: [
     FormComponent,
@@ -16,7 +15,8 @@ import { ColumnaComponent } from './columna/columna.component';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   exports: [
     FormComponent,

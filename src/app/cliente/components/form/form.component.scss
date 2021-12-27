@@ -34,7 +34,7 @@
       display: grid;
       place-items: center;
       grid-template-columns: 100%;
-      grid-template-rows: repeat(8, 12.5%);
+      grid-template-rows: repeat(6, 16.6%);
 
 
       h1{
@@ -85,7 +85,11 @@
         background-color: var(--brightPink);
         box-shadow: var(--boxShadowNeonPink2);
       }
-
+      p{
+        color: var(--brightPink);
+        font-family: var(--title1);
+        font-size: 1.6rem;
+      }
     }
 
   }

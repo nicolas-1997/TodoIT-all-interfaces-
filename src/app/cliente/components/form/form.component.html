@@ -3,24 +3,20 @@
     <img src="../../../../assets/img/travel-moto.svg" alt="">
   </div>
   <div class="form--content">
-    <form action="">
+    <form [formGroup]="solicitarViajeForm" (ngSubmit)="solicitar()" >
       <h1>Formulario de Retiro de Equipo</h1>
       <div class="input-group">
-        <input type="text" placeholder="  Marca"  formControlName="Marca">
+        <input type="text" placeholder="  Marca"  formControlName="Marca" formControlName="mark">
       </div>
       <div class="input-group">
-        <input type="text" placeholder="  Modelo"  formControlName="Modelo">
+        <input type="text" placeholder="  Modelo"  formControlName="Modelo" formControlName="model">
       </div>
       <div class="input-group">
-        <input type="text" placeholder="  Falla"  formControlName="Falla">
+        <input type="text" placeholder="  Falla"  formControlName="Falla" formControlName="failure">
       </div>
-      <div class="input-group">
-        <input type="text" placeholder="  Dirrección"  formControlName="Dirrección">
-      </div>
-      <div class="input-group fecha">
-        <input type="datetime-local" placeholder="  Fecha"  formControlName="Fecha">
-      </div>
-      <button>Solicitar</button>
+      <button type="submit" >Solicitar</button>
+
+      <p>{{status}}</p>
     </form>
   </div>
 </div>

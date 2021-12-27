@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Travel } from '../models/travel.model';
+import { Travel, SolicitarViaje } from '../models/travel.model';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { AuthService } from './auth.service';
-import { BehaviorSubject, forkJoin } from 'rxjs';
+import { BehaviorSubject, forkJoin, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -28,11 +29,11 @@ export class TravelsService{
   private viajeEnCurso: Travel[] = []
   private viajeFinalizado: Travel[] = []
 
-  private url_api: string = `${environment.URL_API}/api/Travel`;
+  private url_api: string = `${environment.URL_API}`;
 
 
   private getTravel(roleId: number | undefined, statusTravel: number) {
-    return this.http.get<Travel[]>(`${this.url_api}/${roleId}/${statusTravel}`)
+    return this.http.get<Travel[]>(`${this.url_api}/api/Travel/${roleId}/${statusTravel}`)
   }
 
 
@@ -45,7 +46,6 @@ export class TravelsService{
       resp => {
 
         let newResp: Travel[] = resp.flat()
-        console.log(newResp)
         this.allTravels.next(newResp)
 
         for (let travel of newResp) {
@@ -64,6 +64,23 @@ export class TravelsService{
         this.travelsEnCurso.next(this.viajeEnCurso)
         this.travelsCompletes.next(this.viajeFinalizado)
       }
+    )
+  }
+
+  solicitarRetiro(body:SolicitarViaje){
+    return this.http.post(`${this.url_api}/api/Retirement?clientId=${body.idCliente}&mark=${body.mark}&model=${body.model}&failure=${body.failure}`, body)
+    .pipe(
+      catchError((error: HttpErrorResponse) =>{
+        if(error.status == 403){
+          return throwError('Hubo un error con los datos')
+        }
+        else if (error.status == HttpStatusCode.InternalServerError){
+          return throwError('Error Interno del Servidor intente mas tarde')
+        }
+        else{
+          return throwError('Ups algo salio mal :(')
+        }
+      })
     )
   }
 }

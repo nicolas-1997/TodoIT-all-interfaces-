@@ -3,8 +3,6 @@ export interface Travel{
   creationDate: Date,
   lastStatusTravel:number,
   travelEquipmentDTOs:TravelEquipmentDTOs[],
-  statusTravel:number
-
 }
 export interface TravelEquipmentDTOs{
   id:number,
@@ -13,6 +11,7 @@ export interface TravelEquipmentDTOs{
   cadete: Cadete,
   operator: Operator,
   equipment:Equipment
+  statusTravel:number
 }
 export interface Operator{
   id:number,
@@ -47,4 +46,12 @@ export interface Cadete{
 export interface TravelPost{
   travelId: number,
   statusTravel: number,
+}
+
+export interface SolicitarViaje{
+  idCliente: number,
+  mark: string,
+  model:string,
+  failure:string,
+
 }

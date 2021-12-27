@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: 'cliente',
     loadChildren: () => import('./cliente/cliente.module').then(m => m.ClienteModule),
-    canActivate: [AuthClienteGuard]
+
   },
   {
     path: '',

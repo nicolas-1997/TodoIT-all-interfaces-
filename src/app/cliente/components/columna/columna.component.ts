@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-columna',
@@ -12,7 +12,12 @@ export class ColumnaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Input() fecha:string = ''
+  @Input() marca:string = ''
+  @Input() modelo:string = ''
+  @Input() EstadoEquipo:string = ''
+  @Input() EstadoEnvio:string = ''
+  @Input() FechaEntrega:string = ''
 
-  column:string[] = ['21-02-12', 'Apple', 'Mc Pro', 'Reparado', 'Entregado', '21-02-13']
-
+  @Input() history=false
 }

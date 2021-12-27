@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { TravelsService } from 'src/app/shared/services/travels.service';
+import { Travel } from '../../../shared/models/travel.model';
 @Component({
   selector: 'app-historial-de-viajes',
   templateUrl: './historial-de-viajes.component.html',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistorialDeViajesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private travelsService: TravelsService, private authService: AuthService) { }
 
   ngOnInit(): void {
-  }
+    this.authService.userLogued$.subscribe(
+      rta => {
+        this.clienteId = rta?.id ? rta?.id : 0
+      }
+    )
 
+    this.travelsService.travelsCompletes$.subscribe(rta => {
+      console.log('hola soy la rta history',rta)
+
+      for(let viaje of rta){
+        if (viaje.lastStatusTravel !== 4) {
+          if(viaje.travelEquipmentDTOs[0].equipment.cliente.id === this.clienteId ){
+            this.myHistory.push(viaje)
+            console.log(viaje)
+          }
+        }
+      }
+    })
+  }
+  clienteId:number = 0;
+  myHistory:Travel[] = []
 }

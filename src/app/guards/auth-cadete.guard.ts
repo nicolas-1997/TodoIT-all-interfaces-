@@ -9,15 +9,14 @@ export class AuthCadeteGuard implements CanActivate {
 
   constructor(private authService:AuthService, private router:Router){}
 
-  loged:boolean = false
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree  {
+
       return this.authService.userLogued$.pipe(
         map(
           rta => {
-            console.log('rta1: ',rta)
             if(rta?.rol !== null){
               if (rta?.rol.id == 2) {
                 return true
@@ -32,7 +31,5 @@ export class AuthCadeteGuard implements CanActivate {
           }
         )
       )
-
-
-  }
+     }
 }
