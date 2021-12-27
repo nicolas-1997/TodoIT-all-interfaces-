@@ -6,14 +6,17 @@
     </section>
     <section class="table--container">
       <div class="tabla--content">
-        <div class="table"  *ngFor="let travel of travels">
+        <div class="table" *ngFor="let travel of travels">
           <app-card
-                    direccion="{{travel.travelEquipmentDTOs[0].equipment.cliente.address}}"
-                    [estado]=" travel.lastStatusTravel"
-                    hora=" {{travel.travelEquipmentDTOs[travel.travelEquipmentDTOs.length -1].operationDate | date:'shortTime' }} "
-                    equipo=" {{travel.travelEquipmentDTOs[0].equipment.mark}} "
-                    cliente=" {{travel.travelEquipmentDTOs[0].equipment.cliente.fullName}} ">
-                  </app-card>
+            direccion="{{travel.travelEquipmentDTOs[0].equipment.cliente.address}}"
+            estado=" {{travel.lastStatusTravel | statusTravelTraductor}}"
+            hora=" {{travel.travelEquipmentDTOs[travel.travelEquipmentDTOs.length -1].operationDate | date:'shortTime' }} "
+            equipo=" {{travel.travelEquipmentDTOs[0].equipment.mark}} "
+            cliente=" {{travel.travelEquipmentDTOs[0].equipment.cliente.fullName}} "
+            [idCadete]="travel.travelEquipmentDTOs[travel.travelEquipmentDTOs.length -1].cadete ? travel.travelEquipmentDTOs[travel.travelEquipmentDTOs.length -1].cadete.id : 0 "
+            [travelId]="travel.id"
+            [statusTravel]="travel.lastStatusTravel"
+          ></app-card>
         </div>
       </div>
     </section>

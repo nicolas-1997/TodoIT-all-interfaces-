@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: 'cadete',
     loadChildren: () => import('./cadete/cadete.module').then(m => m.CadeteModule),
-    canActivate: [AuthCadeteGuard]
+
   },
   {
     path: 'admin',

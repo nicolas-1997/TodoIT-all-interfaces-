@@ -5,6 +5,7 @@ import { ViajesComponent } from './viajes/viajes.component';
 import { ComponentsModule } from '../components/components.module';
 import { ViajesEnCursoComponent } from './viajes-en-curso/viajes-en-curso.component';
 import { HistoryComponent } from './history/history.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -17,7 +18,8 @@ import { HistoryComponent } from './history/history.component';
   ],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    SharedModule
   ],
   exports: [
     HomeComponent,

@@ -32,6 +32,9 @@ export class TravelsService{
   private url_api: string = `${environment.URL_API}`;
 
 
+
+
+
   private getTravel(roleId: number | undefined, statusTravel: number) {
     return this.http.get<Travel[]>(`${this.url_api}/api/Travel/${roleId}/${statusTravel}`)
   }
@@ -80,6 +83,21 @@ export class TravelsService{
         else{
           return throwError('Ups algo salio mal :(')
         }
+      })
+    )
+  }
+
+
+  postTravels(travelId:number, statusTravel:number, idCadete:number){
+    return this.http.post<Travel>(`${this.url_api}/api/Travel?travelId=${travelId}&statusTravel=${statusTravel + 1}&userOperation=2&cadeteId=${idCadete}&isReasigned=false`,[travelId, statusTravel]).pipe(
+      catchError((error:HttpErrorResponse) => {
+        if (error.status == HttpStatusCode.Forbidden) {
+          return 'Ups parece que ya tienes el maximo de viajes posibles'
+        }
+        else {
+          return '¡Ups! ocurrio un error interno. Intentalo despues :('
+        }
+
       })
     )
   }

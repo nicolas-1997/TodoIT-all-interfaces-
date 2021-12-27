@@ -9,10 +9,13 @@
         <div class="table" *ngFor="let travel of travels">
           <app-card *ngIf="travel.travelEquipmentDTOs[travel.travelEquipmentDTOs.length -1].cadete.id == userID"
             direccion="{{travel.travelEquipmentDTOs[0].equipment.cliente.address}}"
-            [estado]=" travel.lastStatusTravel"
+            estado=" {{travel.lastStatusTravel | statusTravelTraductor}}"
             hora=" {{travel.travelEquipmentDTOs[travel.travelEquipmentDTOs.length -1].operationDate | date:'shortTime' }} "
             equipo=" {{travel.travelEquipmentDTOs[0].equipment.mark}} "
             cliente=" {{travel.travelEquipmentDTOs[0].equipment.cliente.fullName}} "
+            [idCadete]="travel.travelEquipmentDTOs[travel.travelEquipmentDTOs.length -1].cadete.id"
+            [travelId]="travel.id"
+            [statusTravel]="travel.lastStatusTravel"
             [enCurso]="true"
             ></app-card>
         </div>
