@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { filter, switchMap } from 'rxjs';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { TravelsService } from 'src/app/shared/services/travels.service';
 @Component({
   selector: 'app-layaout',
   templateUrl: './layaout.component.html',
@@ -7,16 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayaoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private travelService: TravelsService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.authService.userLogued$.pipe(filter(rta => rta !== null)).subscribe(
+      rta => this.travelService.getAllTravels(rta?.rol.id ? rta?.rol.id : 0)
+    )
+
+
   }
 
 
-  state:boolean = false;
+  state: boolean = false;
 
 
-  changeState(){
+  changeState() {
     this.state = !this.state
   }
 

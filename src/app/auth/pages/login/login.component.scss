@@ -1,7 +1,7 @@
 .login-container{
   width: 100%;
   height: 100%;
-
+  background-color: var(--veryDarkBlue2);
   display: grid;
   place-items: center;
 
@@ -11,18 +11,22 @@
     height: 90%;
 
     display: grid;
+    place-items: center;
     grid-template-columns: 100%;
-    grid-template-rows: 15% 85%;
+    grid-template-rows: 10% 70% 10% 10%;
 
 
     h1{
       grid-row: 1;
-      font-size: 1.8rem;
+      font-size: 2.4rem;
       text-align: center;
+      font-family: var(--title1);
+      color: var(--whiteSmoke);
     }
     form{
       grid-row: 2;
       width: 100%;
+      max-width: 500px;
       height: 80%;
 
       display: grid;
@@ -31,27 +35,72 @@
       grid-template-rows: 45% 45% 10%;
 
       .input-group{
-        width: 80%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
 
         label{
           font-size: 1.8rem;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          i{
+            color: var(--brightPink);
+            font-size: 2rem;
+          }
         }
         input{
-          width: 50%;
-          height: 5rem;
+          border: none;
+          width: 100%;
+          height: 3.5rem;
           margin-top: 1.2rem;
-          border-radius: 8px;
+          border-radius: 2px;
           text-align: center;
+          color: var(--whiteSmoke);
+          background-color: var( --veryDarkBlue);
+        }
+        input::placeholder{
+          color: var(--darkLateGray);
         }
       }
       button{
-        width: 25%;
-        border-radius: 8px;
-        height: 5rem;
+        width: 80%;
+        border-radius: 2px;
+        border: none;
+        height: 3.5rem;
+        cursor: pointer;
+        background-color: var(--vividPink);
+        box-shadow: var(--boxShadowNeonPink2);
+        color: var(--whiteSmoke);
+      }
+    }
+    .status-message{
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p{
+        color: var(--brightPink);
+        font-family: var(--title1);
+        font-size: 1.6rem;
+      }
+    }
+    p{
+
+      color: var(--darkLateGray);
+      text-align: center;
+      font-size: 1.2rem;
+      font-family: var(--textos1);
+      margin-bottom: 1.5rem;
+
+      a{
+        color: var(--cyanPure);
+        text-decoration: none;
       }
     }
   }

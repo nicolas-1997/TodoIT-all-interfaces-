@@ -6,12 +6,18 @@
     </section>
     <section class="table--container">
       <div class="tabla--content">
-        <div class="table">
-          <app-card direccion="CABA" estado="Retiro" hora="12:59" equipo="CPU" cliente="Cabrera Nicolas"></app-card>
-          <app-card direccion="Posadas Misiones" estado="Entrega" hora="22:52" equipo="Notebook" cliente="Sr Thompson" [enCurso]="true"></app-card>
-          <app-card></app-card>
+        <div class="table"  *ngFor="let travel of travels">
+          <app-card
+                    direccion="{{travel.travelEquipmentDTOs[0].equipment.cliente.address}}"
+                    [estado]=" travel.lastStatusTravel"
+                    hora=" {{travel.travelEquipmentDTOs[travel.travelEquipmentDTOs.length -1].operationDate | date:'shortTime' }} "
+                    equipo=" {{travel.travelEquipmentDTOs[0].equipment.mark}} "
+                    cliente=" {{travel.travelEquipmentDTOs[0].equipment.cliente.fullName}} ">
+                  </app-card>
+                  {{travel.id}}
         </div>
       </div>
     </section>
   </div>
 </div>
+<!-- *ngIf="travel.lastStatusTravel == 1 || travel.lastStatusTravel == 5 " -->

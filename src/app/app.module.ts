@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuicklinkModule } from 'ngx-quicklink';
+
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +16,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    QuicklinkModule
+    QuicklinkModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

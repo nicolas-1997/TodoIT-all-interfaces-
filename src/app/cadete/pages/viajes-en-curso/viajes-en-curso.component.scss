@@ -23,6 +23,25 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+
+      input{
+        width: 50%;
+        height: 35%;
+        background-color: var(--veryDarkBlue);
+        border: none;
+        border-radius: 2px 0 0 2px;
+      }
+      i{
+        background-color: var(--veryDarkBlue);
+        color: var(--darkGray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.5rem;
+        height: 35%;
+        border: none;
+        border-radius: 0 2px 2px 0;
+      }
     }
     .table--container{
       grid-row: 2;
@@ -32,12 +51,13 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-
+      overflow-y: scroll;
       .tabla--content{
         width: 80%;
         height: 90%;
-
-        border: 1px solid crimson;
+        .table{
+          border: none;
+        }
       }
     }
   }

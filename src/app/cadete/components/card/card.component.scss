@@ -1,14 +1,16 @@
 .card--container{
   width: 100%;
   height: 100%;
-  background-color: darkgoldenrod;
+
 
   .card--content{
     padding: 1.2rem 0;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 25%, 75%;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-color: var(--veryDarkBlue);
+    margin-top: 0.5px;
+    // box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     .vista-previa{
       display: grid;
       grid-template-columns: 80% 20%;
@@ -34,6 +36,7 @@
           background: none;
           i{
             font-size: 3.5rem;
+            color: var(--vividPink);
           }
         }
 
@@ -69,13 +72,23 @@
         align-items: center;
 
         button{
-          width: 3.5rem;
-          height: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 2rem;
+          height: 2rem;
           border: none;
-          background: none;
+          background-color: var(--whiteSmoke);
+          border-radius: 50%;
           margin-bottom: 1.2rem;
+          margin-right: 1.5rem;
+
           i{
-            font-size: 2.5rem;
+            font-size: 2.7rem;
+            color: var(--vividPink);
+            &.bxs-x-circle{
+              color: var(--cyanPure);
+            }
           }
         }
       }

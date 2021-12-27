@@ -13,7 +13,7 @@ export class CardComponent implements OnInit {
   }
 
   @Input() direccion:string = ''
-  @Input() estado:string = ''
+  @Input() estado:number = 0
   @Input() hora:string = ''
   @Input() equipo:string = ''
   @Input() cliente:string = ''

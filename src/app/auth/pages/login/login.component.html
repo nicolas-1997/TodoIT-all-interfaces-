@@ -1,16 +1,30 @@
 <div class="login-container">
   <div class="login-content">
     <h1>Inicio de Sesion</h1>
-    <form action="">
+    <form [formGroup]="login" (ngSubmit)="loginData()">
       <div class="input-group">
-        <label for="">Email</label>
-        <input type="email" placeholder="email">
+        <label for="email"  >
+          Email
+          <i class='bx bx-envelope'></i>
+        </label>
+        <input name="email" type="email" placeholder="email" formControlName="email">
       </div>
       <div class="input-group">
-        <label for="">Password</label>
-        <input type="password" placeholder="password">
+        <label for="password" >
+          Password
+          <i class='bx bxs-lock-alt'></i>
+        </label>
+        <input type="password" name="password" placeholder="password" formControlName="password">
       </div>
       <button type="submit">Login</button>
     </form>
+    <div class="status-message">
+      <p>{{statusLogin}}</p>
+    </div>
+
+    <p>
+      ¿No tienes cuenta?
+      <a [routerLink]="['../register']" >¡Registrate!</a>
+    </p>
   </div>
 </div>
