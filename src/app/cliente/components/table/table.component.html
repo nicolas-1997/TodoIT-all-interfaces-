@@ -3,7 +3,7 @@
     <h1>{{title}}</h1>
 
     <div class="search">
-      <input placeholder="  search" type="text">
+      <input placeholder="  search" type="text" [(ngModel)]="filter">
       <div class="icon"><i class='bx bx-search-alt'></i></div>
     </div>
   </section>
@@ -12,7 +12,7 @@
       <div class="header-table">
           <div  class="column"  *ngFor="let colum of columnas">{{colum}}</div>
       </div>
-      <div class="body-table" *ngFor="let viaje of tableInfo">
+      <div class="body-table" *ngFor="let viaje of tableInfo | filterViajes:filter | paginator:page_size:page_number" >
         <app-columna
           fecha="{{viaje.creationDate | date:'shortDate'}}"
           marca="{{viaje.travelEquipmentDTOs[viaje.travelEquipmentDTOs.length -1].equipment.mark}}"
@@ -24,7 +24,9 @@
         ></app-columna>
       </div>
       <div class="footer-table">
-
+        <mat-paginator [length]="tableInfo.length" [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions"
+          (page)="handlePage($event)" aria-label="Select page">
+        </mat-paginator>
       </div>
     </div>
   </section>

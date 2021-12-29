@@ -17,17 +17,12 @@ export class AuthCadeteGuard implements CanActivate {
       return this.authService.userLogued$.pipe(
         map(
           rta => {
-            if(rta?.rol !== null){
               if (rta?.rol.id == 2) {
                 return true
               }
               else{
                 return false
               }
-            }
-            else{
-              return false
-            }
           }
         )
       )

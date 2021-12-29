@@ -18,15 +18,15 @@ export class AuthService {
 
   }
 
-  user = new BehaviorSubject<User | null>(null);
   private api_url:string = `${environment.URL_API}`;
 
-  userLogued$ = this.user.asObservable()
+  private user = new BehaviorSubject<User | null>(null);
+  userLogued$ = this.user.asObservable();
 
   loginAuth(dto:Login){
     return this.http.get<User>(`${this.api_url}/api/Login?email=${dto.email}&password=${dto.password}`).pipe(
       catchError((error: HttpErrorResponse) => {
-        if(error.status == 403){
+        if(error.status == HttpStatusCode.Forbidden){
           return throwError('El usuario es incorrecto o no existe')
         }
         else if (error.status == HttpStatusCode.InternalServerError){

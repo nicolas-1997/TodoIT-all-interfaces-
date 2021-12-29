@@ -19,12 +19,9 @@ export class EstadoDeEnvioComponent implements OnInit {
     )
 
     this.travelsService.travelsEnCurso$.subscribe(rta => {
-      console.log(rta)
       for(let viaje of rta){
-        console.log(`${viaje.travelEquipmentDTOs[0].equipment.clientId} // ${this.clienteId}`)
         if(viaje.travelEquipmentDTOs[0].equipment.clientId === this.clienteId ){
           this.myTravels.push(viaje)
-          console.log("Hola soy viaje en curso",viaje)
         }
       }
     })

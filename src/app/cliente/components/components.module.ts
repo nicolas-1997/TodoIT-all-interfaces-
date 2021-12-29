@@ -3,9 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormComponent } from './form/form.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
 import { ColumnaComponent } from './columna/columna.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MaterialsModule } from 'src/app/shared/materials/materials.module';
+
 @NgModule({
   declarations: [
     FormComponent,
@@ -16,7 +19,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    MaterialsModule,
+    FormsModule
   ],
   exports: [
     FormComponent,

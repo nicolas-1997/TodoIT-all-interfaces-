@@ -9,6 +9,7 @@ import { QuicklinkModule } from 'ngx-quicklink';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +20,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     QuicklinkModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

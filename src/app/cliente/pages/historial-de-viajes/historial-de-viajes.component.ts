@@ -19,13 +19,11 @@ export class HistorialDeViajesComponent implements OnInit {
     )
 
     this.travelsService.travelsCompletes$.subscribe(rta => {
-      console.log('hola soy la rta history',rta)
 
       for(let viaje of rta){
         if (viaje.lastStatusTravel !== 4) {
           if(viaje.travelEquipmentDTOs[0].equipment.cliente.id === this.clienteId ){
             this.myHistory.push(viaje)
-            console.log(viaje)
           }
         }
       }

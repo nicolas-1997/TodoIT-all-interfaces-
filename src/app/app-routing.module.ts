@@ -12,13 +12,14 @@ const routes: Routes = [
   },
   {
     path: 'cadete',
+    canActivate: [AuthCadeteGuard],
     loadChildren: () => import('./cadete/cadete.module').then(m => m.CadeteModule),
 
   },
   {
     path: 'admin',
+    canActivate: [AuthAdminGuard],
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
-    canActivate: [AuthAdminGuard]
   },
   {
     path: 'cliente',
@@ -27,6 +28,7 @@ const routes: Routes = [
   },
   {
     path: '',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   }
 ];

@@ -6,7 +6,7 @@ import { ClienteRoutingModule } from './cliente-routing.module';
 import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
 import { SharedModule } from '../shared/shared.module';
-
+import { MaterialsModule } from '../shared/materials/materials.module';
 import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
@@ -18,7 +18,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     ClienteRoutingModule,
     PagesModule,
     ComponentsModule,
-    SharedModule
+    SharedModule,
+    MaterialsModule
   ],
   exports: [
     LayoutComponent

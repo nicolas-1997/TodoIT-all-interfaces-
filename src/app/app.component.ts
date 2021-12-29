@@ -13,7 +13,9 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     let id = this.authService.getIdLS()
     if(id){
-      this.authService.getUser().subscribe()
+      this.authService.getUser().subscribe(
+        rta => console.log(rta)
+      )
     }
   }
 }
