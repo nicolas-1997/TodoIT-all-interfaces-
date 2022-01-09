@@ -1,4 +1,15 @@
-# M5T1V1
+#Inicio de Sesion
+
+Usuario cliente:  haroldvillarroel0@gmail.com 
+Password Cliente: 123456
+
+Usuario Cadete: cadete@todoit.com
+Password Cadete: 123
+
+Usuario Administrador: administrador@gmail.com
+Password Administrador: 123456
+
+# TodoIT
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
 
